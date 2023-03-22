@@ -1,0 +1,144 @@
+.order{
+    .wrapper{
+        h2{
+            @include font(700);
+            text-transform: capitalize;
+            font-size: 30px;
+        }
+        .checkbox-container{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .checkbox{
+                width: 15px;
+                height: 15px;
+                background-color: $lightgray;
+                border: 1px solid $gray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg{
+                    display: none;
+                }
+                &.checked{
+                    background-color: $white;
+                    svg{
+                        display: inline-block;
+                        fill: $orange;
+                    }
+                }
+            }
+            span{
+                @include font(400);
+                font-size: 14px;
+                text-transform: capitalize;
+            }
+        }
+        form{
+            border-bottom: 1px solid $gray;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            input{
+                padding-bottom: 10px;
+                border-bottom: 1px solid $gray;
+                width: 100%;
+                @include font(500);
+                &::placeholder{
+                    color: $black;
+                }
+            }
+            .container{
+                @extend %container;
+                input{
+                    width: 48%;
+                }
+            }
+            textarea{
+                border: none;
+                outline: none;
+                resize: none;
+                height: 80px;
+                @include font(400);
+                font-size: 16px;
+            }
+        }
+        .payment-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 30px;
+            .check-order{
+                width: 48%;
+                .text-container{
+                    @extend %container;
+                    &:not(:last-child){
+                        padding-bottom: 10px;
+                        border-bottom: 1px dashed $gray;
+                    }
+                    margin-top: 30px;
+                    &:not(:nth-child(2)){
+                        margin-top:10px ;
+                    }
+                    p{
+                        @include font(400);
+                        text-transform: capitalize;
+                        font-size: 14px;
+                        &:first-child{
+                            padding-left: 15px;
+                        }
+                        &:last-child{
+                            padding-right: 15px;
+                        }
+                        &.bold{
+                            @include font(600);
+                            color: $black;
+                        }
+                    }
+                }
+            }
+            .payment{
+                width: 48%;
+                .card-payment{
+                    margin-top: 30px;
+                    box-shadow: 0 0 5px 3px rgba($color: #000000, $alpha: 0.1);
+                    padding: 15px 15px 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 13px;
+                    p{
+                        @include font(400);
+                        color: $gray;
+                        font-size: 14px;
+                        text-align: justify;
+                    }
+                    .paycard{
+                        margin-top: 20px;
+                        margin-bottom: 25px;
+                    #jiga1{
+                        margin-right: 15px;
+                    }
+                    #jiga2{
+                        margin-right: 15px;
+                    }
+                    #jiga3{
+                        margin-right: 15px;
+                    }
+                    #jiga4{
+                        margin-right: 15px;
+                    }
+                    }
+                }
+            }
+        }
+        .btn-container{
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            .btn.orange{
+                width: 15%;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
