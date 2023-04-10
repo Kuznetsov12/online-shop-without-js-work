@@ -1,14 +1,14 @@
-let price = document.querySelector('.price')
+// let price = document.querySelector('.price')
 
-function calculateDiscount(discount){
+// function calculateDiscount(discount){
 
-    new_price = price.innerHTML
+//     new_price = price.innerHTML
         
     
     
-         - discount
-    return new_price
+//          - discount
+//     return new_price
 
-}
+// }
 
-price.innerHTML = calculateDiscount(300)
+// price.innerHTML = calculateDiscount(300)

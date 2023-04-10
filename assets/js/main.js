@@ -74,36 +74,129 @@
 // for(let i = 0; i < students.length; i++){
 //     console.log(students[i])
 // }
-// let cards_data = [
+let cards_data = [
+    {
+        src: "./assets/img/t-shirt.png",
+        title: "T-shirt summer collection",
+        price: 1000
+    },
+    {
+        src: "./assets/img/woman.jpg",
+        title: "Woman of ur disare",
+        price: 10
+    },
+    {
+        src: "./assets/img/clothes.jpg",
+        title: "Одежда Ашота",
+        price: 1000000
+    },
+    {
+        src: "./assets/img/accessories.jpg",
+        title: "Watch ur grandma",
+        price: 10000
+    },
+    {
+        src: "./assets/img/sneaker.jpg",
+        title: "sneaker daddy",
+        price: 3000
+    },
+    {
+        src: "./assets/img/man.jpg",
+        title: "Man of ur disare",
+        price: 1500
+    }
+]
+
+
+
+const setCards = () =>{
+    let cards_container = document.querySelector('.cards .container')
+    cards_data.forEach(item => {
+    let card = `
+    <a href="./assets/pages/product.html">
+    <div class="card">
+        <div class="cover">
+            <img src=${item.src} alt="">
+            <div class="circle"></div>
+        </div>
+        <div class="card-content">
+            <h4>${item.title}</h4>
+            <p class="price">${item.price}$</p>
+        </div>
+    </div>
+    </a>
+    `
+    cards_container.innerHTML += card
+    })
+}
+
+
+const sortCards = () => {
+    cards_data.sort((a,b) =>{
+        return a.price - b.price
+    })
+    
+}
+sortCards()
+
+
+
+// let cards = [
 //     {
-//         src: "./assets/img/t-shirt.png",
-//         title: "T-shirt summer collection",
-//         price: 1000
+//         img: "./assets/img/t-shirt.png",
+//         title: "oksi",
+//         price: 34
 //     },
 //     {
-//         src: "./assets/img/woman.jpg",
-//         title: "Woman of ur disare",
-//         price: 10
+//         img: "./assets/img/sneaker.jpg",
+//         title: "snikers",
+//         price: 340
 //     },
 //     {
-//         src: "./assets/img/clothes.jpg",
-//         title: "Одежда Ашота",
-//         price: 1000000
+//         img: "./assets/img/man.jpg",
+//         title: "arinkakrasava",
+//         price: 3400
+//     },
+// ]
+
+// let container_for_cards = document.querySelector('.cards .container')
+// console.log(container_for_cards)
+
+// container_for_cards.innerHTML = ``
+
+// cards.forEach(item => {
+//     let htmlCard = `
+//     <a href="./assets/pages/product.html">
+//      <div class="card">
+//          <div class="cover">
+//              <img src=${item.img} alt="">
+//              <div class="circle"></div>
+//         </div>
+//          <div class="card-content">
+//             <h4>${item.title}</h4>
+//              <p class="price">${item.price}$</p>
+//          </div>
+//      </div>
+//      </a>
+//     `
+//     container_for_cards.innerHTML += htmlCard
+// })
+
+// let cards = [
+//     {
+//         img: "./assets/img/woman.jpg",
+//         title: "T-shirt arin  collection",
+//         price: 1
 //     },
 //     {
-//         src: "./assets/img/accessories.jpg",
-//         title: "Watch ur grandma",
-//         price: 10000
+//         img: "./assets/img/sneaker.jpg",
+//         title: "easy boost 350",
+//         price: 7000
 //     },
 //     {
-//         src: "./assets/img/sneaker.jpg",
-//         title: "sneaker daddy",
-//         price: 3000
-//     },
-//     {
-//         src: "./assets/img/man.jpg",
-//         title: "Man of ur disare",
-//         price: 1500
+//         img: "./assets/img/man.jpg",
+//         title: "sak",
+//         price: 100000
 //     }
 // ]
 
@@ -111,13 +204,14 @@
 // console.log(cards_container)
 
 
+// cards_container.innerHTML = ``
 
-// cards_data.forEach(item => {
-//     let card = `
+// cards.forEach(item =>{
+//     let cardssection = `
 //     <a href="./assets/pages/product.html">
 //     <div class="card">
 //         <div class="cover">
-//             <img src=${item.src} alt="">
+//             <img src="${item.img}" alt="">
 //             <div class="circle"></div>
 //         </div>
 //         <div class="card-content">
@@ -127,47 +221,6 @@
 //     </div>
 //     </a>
 //     `
-//     cards_container.innerHTML += card
+
+//     cards_container.innerHTML += cardssection
 // })
-
-
-let cards = [
-    {
-        img: "./assets/img/t-shirt.png",
-        title: "oksi",
-        price: 34
-    },
-    {
-        img: "./assets/img/sneaker.jpg",
-        title: "snikers",
-        price: 340
-    },
-    {
-        img: "./assets/img/man.jpg",
-        title: "arinkakrasava",
-        price: 3400
-    },
-]
-
-let container_for_cards = document.querySelector('.cards .container')
-console.log(container_for_cards)
-
-container_for_cards.innerHTML = ``
-
-cards.forEach(item => {
-    let htmlCard = `
-    <a href="./assets/pages/product.html">
-     <div class="card">
-         <div class="cover">
-             <img src=${item.img} alt="">
-             <div class="circle"></div>
-        </div>
-         <div class="card-content">
-            <h4>${item.title}</h4>
-             <p class="price">${item.price}$</p>
-         </div>
-     </div>
-     </a>
-    `
-    container_for_cards.innerHTML += htmlCard
-})
