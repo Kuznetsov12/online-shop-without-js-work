@@ -1,34 +1,37 @@
 let basket_cards = [
     {
-    src: "../img/t-shirt.png",
+    src: "./assets/img/t-shirt.png",
     title: "T-shirt summer collection",
     price: 1000,
     color: 'orange',
-    size: 'XXXXXXXXXXXXL максимальный размер удовольствия',
-    cifr: 'dinahui',
-    cifr2: 'samdinahui',
-    count: "1razapizdi",
+    size: 'XXXL iluha',
+    cifr: '-',
+    cifr2: '+',
+    count: "1",
+
     },
     {
-    src: "../img/woman.jpg",
+    src: "./assets/img/woman.jpg",
     title: "Woman of ur disare",
     price: 1,
     color: 'black',
     size: 'XXXXXXL',
-    cifr: 'dinahu',
-    cifr2: 'samdinahu',
-    count: "3razapizdi"
+    cifr: '-',
+    cifr2: '+',
+    count: "1",
+
 
     },
     {
-    src: "../img/clothes.jpg",
+    src: "./assets/img/clothes.jpg",
     title: "Одежда Ашота",
     price: 1000000,
     color: 'pink',
     size: 'XXXL',
-    cifr: 'dinah',
-    cifr2: 'samdinah',
-    count: "2razapizdi"
+    cifr: '-',
+    cifr2: '+',
+    count: "1",
+
     }
 ]
 const set_basket_cards = () => {
@@ -80,8 +83,7 @@ function SortCard() {
     })
 
 }
-SortCard()
-set_basket_cards()
+
 
 
 
@@ -440,11 +442,11 @@ function minusNumber(element){
 
 
 function setTotal(){
-    let products = document.querySelectorAll('.item')
+    let products = document.querySelectorAll('.products-container .item')
     products.forEach(item =>{
         let price = item.querySelector('.item #second p ')
         let new_price = parseInt(price.innerHTML.replace('$' , ''))
-        let total_old = item.querySelector('.item #forth p')
+        let total_old = item.querySelector(' .item #forth p')
         let count = item.querySelector('.count')
         let count_number = parseInt(count.innerHTML)
         let total = new_price * count_number
@@ -454,7 +456,41 @@ function setTotal(){
     
 }
 
-setTotal()
+
+
+
+const changeCounter = (action , element) =>{
+    let counter = element.querySelector('.card .counter-container .count')
+    let count = parseInt(counter.innerHTML)
+    let item = element.closest('.item')
+    if(action === 'minus'){
+        if(count > 0){
+            count -= 1
+        }
+        else{
+            let item =  element.parentNode.parentNode.parentNode
+            if(item.classList.contains('.item')){
+                item.remove()
+            }
+         }
+       
+    }
+    
+    else{
+        if( count != 10){
+         count += 1
+        }
+        if(count == 10){
+            alert('я не курю яйца')
+        }
+    }
+    counter.innerHTML = count
+    if(item){
+        let total_html = item.querySelector('#forth p')
+        let price = parseInt(item.querySelector('#second p ').innerHTML.replace('$', ''))
+        total_html.innerHTML ='$' + (price * count)
+    }
+}
 
 
 

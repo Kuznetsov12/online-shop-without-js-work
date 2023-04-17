@@ -113,7 +113,7 @@ const setCards = () =>{
     let cards_container = document.querySelector('.cards .container')
     cards_data.forEach(item => {
     let card = `
-    <a href="./assets/pages/product.html">
+    <a href="#" onclick="navigation('productpage')" >
     <div class="card">
         <div class="cover">
             <img src=${item.src} alt="">
@@ -138,6 +138,22 @@ const sortCards = () => {
     
 }
 sortCards()
+
+
+const navigation = (pageOpen) =>{
+    const pages = document.querySelectorAll('.fullpage')
+
+    pages.forEach(page =>{
+        page.classList.remove('open')
+
+        page.classList.forEach(pageClass =>{
+            if(pageOpen === pageClass){
+                page.classList.add('open')
+            }
+        })
+    })
+    
+}
 
 
 

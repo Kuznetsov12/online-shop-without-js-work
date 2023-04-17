@@ -1179,4 +1179,11 @@ h3 {
   text-transform: uppercase;
 }
 
+.fullpage {
+  display: none;
+}
+.fullpage.open {
+  display: inline;
+}
+
 /*# sourceMappingURL=style.css.map */

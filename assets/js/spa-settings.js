@@ -1,49 +1,68 @@
-fetch("./assets/pages/components/main.html")
-.then(response =>{
+const info = [
+    {
+        url: "./assets/base/header.html",
+        include: '.wrapper'
+    },
+    {
+        url: "./assets/base/footer.html",
+        include: '.footer-include'
+    },
+    {
+        url: "./assets/pages/components/main.html",
+        include: '.main-include'
+    },
+    {
+        url: "./assets/pages/components/category.html",
+        include: '.category-include'
+    },
+    {
+        url: "./assets/pages/components/cards.html",
+        include: '.cards-include'
+    },
+    {
+        url: "./assets/pages/basket.html",
+        include: '.basket-include'
+    },
+    {
+        url: "./assets/pages/order.html",
+        include: '.order-include'
+    },
+    {
+        url: "./assets/pages/product.html",
+        include: '.product-include'
+
+    },
+
+    
+
+    
+]
+
+
+info.forEach(item =>{
+    fetch(item.url)
+    .then(response =>{
     return response.text()
-})
-.then(data =>{
-    document.querySelector('.main-include').innerHTML = data
-})
-
-
-
-fetch("./assets/pages/components/category.html")
-.then(response =>{
-    return response.text()
-})
-.then(data =>{
-    document.querySelector('.category-include').innerHTML = data
+    })
+    .then(data =>{
+    document.querySelector(item.include).innerHTML = data
+    if(item.include === '.cards-include'){
+        setCards()
+    }
+    if(item.include === '.basket-include'){
+        set_basket_cards()
+        setTotal()
+    }
+    })
 })
 
 
 
-fetch("./assets/pages/components/cards.html")
-.then(response =>{
-    return response.text()
-})
-.then(data =>{
-    let container = document.querySelector('.cards-include')
-    container.innerHTML = data
-    setCards()
-})
 
 
 
-fetch("./assets/base/header.html")
-.then(response =>{
-    return response.text()
-})
- .then(data =>{
-    document.querySelector('.wrapper').innerHTML = data
-})
 
 
 
-fetch("./assets/base/footer.html")
-.then(response =>{
-    return response.text()
-})
-.then(data =>{
-    document.querySelector('.footer-include').innerHTML = data
-})
+
+
