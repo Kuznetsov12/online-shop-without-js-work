@@ -172,6 +172,7 @@ footer .email-container {
 footer .email-container #iluha {
   width: 90%;
   border: 1px solid #Fd5b46;
+  border-right: none;
 }
 footer .email-container .btn.orange {
   width: 10%;
@@ -1041,12 +1042,12 @@ h3 {
   text-transform: capitalize;
   font-size: 30px;
 }
-.order .wrapper .checkbox-container {
+.order .wrapper label {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.order .wrapper .checkbox-container .checkbox {
+.order .wrapper label .checkbox {
   width: 15px;
   height: 15px;
   background-color: #f5f2ec;
@@ -1054,18 +1055,20 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
 }
-.order .wrapper .checkbox-container .checkbox svg {
-  display: none;
+.order .wrapper label .checkbox svg {
+  opacity: 0;
+  transition: 0.5s;
 }
-.order .wrapper .checkbox-container .checkbox.checked {
+.order .wrapper label .checkbox.checked {
   background-color: #fff;
 }
-.order .wrapper .checkbox-container .checkbox.checked svg {
-  display: inline-block;
+.order .wrapper label .checkbox.checked svg {
+  opacity: 1;
   fill: #Fd5b46;
 }
-.order .wrapper .checkbox-container span {
+.order .wrapper label span {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -1179,11 +1182,56 @@ h3 {
   text-transform: uppercase;
 }
 
+.forms {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forms .auth, .forms .reg {
+  width: 30%;
+  border: 1px solid #939393;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+.forms .auth input:not([type=button]), .forms .reg input:not([type=button]) {
+  width: 94%;
+  padding: 2% 3%;
+  border: 1px solid #939393;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.forms .auth h2, .forms .reg h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+.forms .auth .btn.orange, .forms .reg .btn.orange {
+  width: 50%;
+  padding: 12px 0;
+}
+.forms .auth a, .forms .reg a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  transition: 0.4s;
+  color: #000;
+}
+.forms .auth a:hover, .forms .reg a:hover {
+  color: #Fd5b46;
+}
+
 .fullpage {
   display: none;
 }
 .fullpage.open {
-  display: inline;
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

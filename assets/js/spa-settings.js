@@ -31,11 +31,7 @@ const info = [
         url: "./assets/pages/product.html",
         include: '.product-include'
 
-    },
-
-    
-
-    
+    }
 ]
 
 
@@ -45,14 +41,26 @@ info.forEach(item =>{
     return response.text()
     })
     .then(data =>{
-    document.querySelector(item.include).innerHTML = data
-    if(item.include === '.cards-include'){
-        setCards()
+        document.querySelector(item.include).innerHTML = data
+    switch(item.include){
+        case '.cards-include':
+            setCards()
+            break
+        case '.order-include':
+            setCheckboxes()
+            break
+        case '.basket-include':
+            set_basket_cards()
+            setTotal()
+            break
+            default:
+                break 
     }
-    if(item.include === '.basket-include'){
-        set_basket_cards()
-        setTotal()
-    }
+        
+    // if(item.include === '.basket-include'){
+    //     set_basket_cards()
+    //     setTotal()
+    // }
     })
 })
 

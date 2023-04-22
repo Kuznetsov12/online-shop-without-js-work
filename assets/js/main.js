@@ -240,3 +240,16 @@ const navigation = (pageOpen) =>{
 
 //     cards_container.innerHTML += cardssection
 // })
+
+const changeCheckbox = (e) =>{
+    e.parentNode.querySelector('.checkbox').classList.toggle('checked')
+}
+
+const setCheckboxes = () =>{
+    const checkboxes = document.querySelectorAll('input[type=checkbox]')
+    checkboxes.forEach(item =>{
+        if(item.checked){
+            item.parentNode.querySelector('.checkbox').classList.add('checked')
+        }
+    })
+}

@@ -61,9 +61,9 @@ basket_cards.forEach(item =>{
     </div>
     <div class="column" id="third">
         <div class="counter">
-            <input type="button" value="${item.cifr}" class="btn minus" onclick="minusNumber(this)" >
+            <input type="button" value="${item.cifr}" class="btn minus" onclick="changeCounter('minus' , this)" >
             <p class="count">${item.count}</p>
-            <input type="button" value="${item.cifr2}" class="btn plus" onclick="addNumber(this)">
+            <input type="button" value="${item.cifr2}" class="btn plus" onclick="changeCounter('plus' , this)">
         </div>
     </div>
     <div class="column" id="forth">
@@ -460,7 +460,8 @@ function setTotal(){
 
 
 const changeCounter = (action , element) =>{
-    let counter = element.querySelector('.card .counter-container .count')
+    let counter = element.parentNode.querySelector('.count')
+    console.log(counter)
     let count = parseInt(counter.innerHTML)
     let item = element.closest('.item')
     if(action === 'minus'){
@@ -469,7 +470,7 @@ const changeCounter = (action , element) =>{
         }
         else{
             let item =  element.parentNode.parentNode.parentNode
-            if(item.classList.contains('.item')){
+            if(item.classList.contains('item')){
                 item.remove()
             }
          }
@@ -477,12 +478,13 @@ const changeCounter = (action , element) =>{
     }
     
     else{
+        if(count >= 10){
+            alert('я не курю яйца')
+        }
         if( count != 10){
          count += 1
         }
-        if(count == 10){
-            alert('я не курю яйца')
-        }
+
     }
     counter.innerHTML = count
     if(item){
