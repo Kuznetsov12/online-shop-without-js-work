@@ -106,6 +106,7 @@ header {
   padding: 30px 0;
 }
 header .logo {
+  cursor: pointer;
   display: flex;
   align-items: baseline;
 }
@@ -1189,7 +1190,7 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-.forms .auth, .forms .reg {
+.forms form {
   width: 30%;
   border: 1px solid #939393;
   border-radius: 20px;
@@ -1199,7 +1200,7 @@ h3 {
   gap: 20px;
   padding: 40px;
 }
-.forms .auth input:not([type=button]), .forms .reg input:not([type=button]) {
+.forms form input:not([type=button]) {
   width: 94%;
   padding: 2% 3%;
   border: 1px solid #939393;
@@ -1208,23 +1209,29 @@ h3 {
   font-weight: 500;
   font-size: 16px;
 }
-.forms .auth h2, .forms .reg h2 {
+.forms form h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 30px;
 }
-.forms .auth .btn.orange, .forms .reg .btn.orange {
+.forms form .btn.orange {
   width: 50%;
   padding: 12px 0;
 }
-.forms .auth a, .forms .reg a {
+.forms form a {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   transition: 0.4s;
   color: #000;
 }
-.forms .auth a:hover, .forms .reg a:hover {
+.forms form a:hover {
   color: #Fd5b46;
+}
+.forms form {
+  display: none;
+}
+.forms form.open {
+  display: flex;
 }
 
 .fullpage {

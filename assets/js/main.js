@@ -253,3 +253,75 @@ const setCheckboxes = () =>{
         }
     })
 }
+
+const setSize = (e) =>{
+    let size_html = e.target.parentElement
+    let sizes = size_html.querySelectorAll('p')
+    sizes.forEach(item =>{
+        item.classList.remove('active')
+    })
+    e.target.classList.toggle('active')
+}
+
+const setColor = (e) =>{
+    let color_html = e.target.closest('.color')
+    let colors = color_html.querySelectorAll('.circle-container .circle')
+    colors.forEach(item =>{
+        item.classList.remove('active')
+    })
+    e.target.classList.toggle('active')
+}
+
+
+        
+
+
+// let key = 'da'
+
+// while(key === 'da' || key === 'Da' || key === 'DA'){
+//     let num1 = parseFloat(prompt('введите первое число '))
+//     let num2 = parseFloat(prompt('введите второе число'))
+//     let action = prompt('введите арифметическое действие')
+//     switch(action){
+//     case '+':
+//         alert(num1 + num2)
+//         break;
+//     case '-':
+//         alert(num1 - num2)
+//         break;
+//     case '*':
+//         alert(num1 * num2)
+//         break;
+//     case '/':
+//         if(num2 === 0 ){
+//             alert('пошел нахуй')
+//         }
+//         else{
+//             alert(num1 / num2)
+//         } 
+//         break;
+//     case '**':
+//         alert(Math.pow(num1,num2))
+//         break;
+//     case '^':
+//         alert('корень первого числа' + Math.sqrt(num1))
+//         alert('корень второго числа' + Math.sqrt(num2))
+//         break;
+
+//     }
+//     key = prompt('Вы хотите продолжить? da или net')
+// }
+let num = parseFloat(prompt('Число для умножения'))
+let rangemin = parseFloat(prompt('Введите начало диапазона'))
+let rangemax = parseFloat(prompt('Введите конечное число диапазона '))
+for(let i = rangemin;i<=rangemax; i++){
+    console.log(num + '*' + i +'=' + i*num)
+}
+
+
+    
+
+
+
+
+
