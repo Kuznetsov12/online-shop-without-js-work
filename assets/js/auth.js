@@ -18,13 +18,13 @@ let maskedAuthPhone = IMask(auth_phone , maskoption)
 const login =  () =>{
     let email = document.querySelector('.auth input[type=email]')
     let password = document.querySelector('.auth input[type=password]')
+    let phone = maskedAuthPhone.unmaskedValue
     users.forEach(user =>{
-        if(user.password === password.value && user.phone === maskedAuthPhone.unmaskedValue && user.login === email.value){
+        console.log(user)
+        if(user.password === password.value && user.phone == phone && user.login === email.value){
             window.location = 'app.html'
         }
-
     })
-    console.table([email.value , phone.value, password.value])
 }
 const reg = () =>{
     let email_user = document.querySelector('.reg input[type=email]')
@@ -58,9 +58,9 @@ const reg = () =>{
     else{
         users.push({
             id: users[users.length -1] + 1,
-            login: email_user,
+            login: email_user.value,
             phone: maskedRegPhone.unmaskedValue,
-            password: password_user
+            password: password_user.value
         })
         let reg = document.querySelector('.reg')
         let auth = document.querySelector('.auth')

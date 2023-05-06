@@ -6,7 +6,7 @@ p, h1, h2, h3, h4, h5, h6, body {
   margin: 0;
 }
 
-.btn {
+.btn, button {
   border: none;
   background-color: transparent;
 }
@@ -33,7 +33,7 @@ input {
   background-color: #EF5DA8;
 }
 
-.order .wrapper .payment-container .check-order .text-container, .order .wrapper form .container, .check .wrapper .containerall .containerinfoprice, .basket .wrapper .container, .basket .wrapper .table-basket .products-container .item, .basket .wrapper .table-basket .columns-name, .card-second .wrapper, .product .wrapper .product-info .options, .product .wrapper .product-info .name, .product .wrapper .product-photos .container, .product .wrapper, .cards .wrapper .container, .cards .wrapper, .category .wrapper .container, .main .wrapper, footer, header .nav-container, header {
+.modal-container .container, .order .wrapper .payment-container .check-order .text-container, .order .wrapper form .container, .check .wrapper .containerall .containerinfoprice, .basket .wrapper .container, .basket .wrapper .table-basket .products-container .item, .basket .wrapper .table-basket .columns-name, .card-second .wrapper, .product .wrapper .product-info .options, .product .wrapper .product-info .name, .product .wrapper .product-photos .container, .product .wrapper, .cards .wrapper .container, .cards .wrapper, .category .wrapper .container, .main .wrapper, footer, header .nav-container, header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,6 +95,33 @@ input {
   cursor: pointer;
   color: #000;
   scale: 1.1;
+}
+.btn.close {
+  border: 1px solid #939393;
+  color: #939393;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 10px 0;
+  background-color: transparent;
+  font-size: 14px;
+  transition: 0.5s;
+  width: 25%;
+  border-radius: 5px;
+}
+.btn.close:hover {
+  border: 1px solid #939393;
+  color: #939393;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 10px 0;
+  background-color: transparent;
+  font-size: 14px;
+  transition: 0.5s;
+  width: 25%;
+  border-radius: 5px;
+  background-color: #939393;
+  color: #fff;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -525,6 +552,13 @@ section {
 .cards .wrapper .sort nav a:hover {
   color: #Fd5b46;
   border-bottom: 1px solid #Fd5b46;
+}
+.cards .wrapper .sort-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
 }
 .cards .wrapper .container {
   width: 100%;
@@ -1239,6 +1273,58 @@ h3 {
 }
 .fullpage.open {
   display: block;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  display: flex;
+  animation-name: openModal;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+.modal-container {
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.modal-container h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+.modal-container h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.modal-container p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

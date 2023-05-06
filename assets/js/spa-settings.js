@@ -44,7 +44,7 @@ info.forEach(item =>{
         document.querySelector(item.include).innerHTML = data
     switch(item.include){
         case '.cards-include':
-            setCards()
+            setCards(cards_data)
             break
         case '.order-include':
             setCheckboxes()

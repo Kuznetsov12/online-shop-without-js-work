@@ -104,14 +104,20 @@ let cards_data = [
         src: "./assets/img/man.jpg",
         title: "Man of ur disare",
         price: 1500
+    },
+    {
+        src: '/assets/img/man.jpg',
+        title: 'new ship',
+        price: 2000
     }
 ]
 
 
 
-const setCards = () =>{
+const setCards = (cards_array) =>{
     let cards_container = document.querySelector('.cards .container')
-    cards_data.forEach(item => {
+    let cards_container_2 = ''
+    cards_array.forEach(item => {
     let card = `
     <a href="#" onclick="navigation('productpage')" >
     <div class="card">
@@ -126,18 +132,32 @@ const setCards = () =>{
     </div>
     </a>
     `
-    cards_container.innerHTML += card
+    cards_container_2 += card
     })
+    cards_container.innerHTML = cards_container_2
 }
 
 
-const sortCards = () => {
-    cards_data.sort((a,b) =>{
-        return a.price - b.price
-    })
-    
+const sortCards = (typeSort) => {
+    let cards_new = []
+    cards_new.push(...cards_data)
+    switch (typeSort){
+        case 'UP':
+            cards_new.sort((a,b) =>{
+                return a.price - b.price
+            })
+            break
+        case 'DOWN':
+            cards_new.sort((a,b) =>{
+                return b.price - a.price
+            })
+            break
+        default:
+            break
+    }  
+    setCards(cards_new) 
 }
-sortCards()
+
 
 
 const navigation = (pageOpen) =>{
@@ -272,6 +292,16 @@ const setColor = (e) =>{
     e.target.classList.toggle('active')
 }
 
+const modal = (open) =>{
+    let modal = document.getElementById('modalCat')
+    if(open){
+        modal.classList.add('open')
+    }
+    else{
+        modal.classList.remove('open')
+    }
+   
+}
 
         
 
@@ -311,12 +341,12 @@ const setColor = (e) =>{
 //     }
 //     key = prompt('Вы хотите продолжить? da или net')
 // }
-let num = parseFloat(prompt('Число для умножения'))
-let rangemin = parseFloat(prompt('Введите начало диапазона'))
-let rangemax = parseFloat(prompt('Введите конечное число диапазона '))
-for(let i = rangemin;i<=rangemax; i++){
-    console.log(num + '*' + i +'=' + i*num)
-}
+// let num = parseFloat(prompt('Число для умножения'))
+// let rangemin = parseFloat(prompt('Введите начало диапазона'))
+// let rangemax = parseFloat(prompt('Введите конечное число диапазона '))
+// for(let i = rangemin;i<=rangemax; i++){
+//     console.log(num + '*' + i +'=' + i*num)
+// }
 
 
     
