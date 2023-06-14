@@ -33,7 +33,7 @@ input {
   background-color: #EF5DA8;
 }
 
-.modal-container .container, .order .wrapper .payment-container .check-order .text-container, .order .wrapper form .container, .check .wrapper .containerall .containerinfoprice, .basket .wrapper .container, .basket .wrapper .table-basket .products-container .item, .basket .wrapper .table-basket .columns-name, .card-second .wrapper, .product .wrapper .product-info .options, .product .wrapper .product-info .name, .product .wrapper .product-photos .container, .product .wrapper, .cards .wrapper .container, .cards .wrapper, .category .wrapper .container, .main .wrapper, footer, header .nav-container, header {
+.admin .panel-add .container, .modal-container .container, .order .wrapper .payment-container .check-order .text-container, .order .wrapper form .container, .check .wrapper .containerall .containerinfoprice, .basket .wrapper .container, .basket .wrapper .table-basket .products-container .item, .basket .wrapper .table-basket .columns-name, .card-second .wrapper, .product .wrapper .product-info .options, .product .wrapper .product-info .name, .product .wrapper .product-photos .container, .product .wrapper, .cards .wrapper .container, .cards .wrapper, .category .wrapper .container, .main .wrapper, footer, header .nav-container, header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,6 +131,14 @@ input {
 
 header {
   padding: 30px 0;
+}
+header .burger-menu {
+  display: none;
+}
+header .burger-menu .line {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
 }
 header .logo {
   cursor: pointer;
@@ -1268,13 +1276,6 @@ h3 {
   display: flex;
 }
 
-.fullpage {
-  display: none;
-}
-.fullpage.open {
-  display: block;
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -1283,16 +1284,9 @@ h3 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-}
-.modal.open {
-  display: flex;
-  animation-name: openModal;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
 }
 .modal-container {
   width: 30%;
@@ -1300,10 +1294,21 @@ h3 {
   padding: 20px;
   border-radius: 10px;
 }
+.modal-container button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+  transition: 0.6s;
+}
+.modal-container button:hover {
+  color: #Fd5b46;
+  cursor: pointer;
+}
 .modal-container h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 30px;
 }
 .modal-container h4 {
   font-family: "Montserrat", sans-serif;
@@ -1314,17 +1319,241 @@ h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   text-align: justify;
-  font-size: 14px;
-  margin: 16px 0;
+  font-size: 16px;
+  margin: 30px 0;
 }
 
-@keyframes openModal {
-  0% {
-    opacity: 0.2;
+.admin {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin .panel-add {
+  width: 80%;
+  border: 2px solid #939393;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.admin .panel-add h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+.admin .panel-add .container {
+  margin-top: 20px;
+}
+.admin .panel-add .container p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.admin .panel-add .container .btn {
+  width: 150px;
+  margin-left: 20px;
+}
+.admin .panel-add input[type=text] {
+  width: 20vw;
+  padding: 6px;
+  border: 1px solid #939393;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+.admin .panel-add .links-container {
+  margin-top: 20px;
+  width: 100%;
+}
+.admin .panel-add .links-container h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 0 16px;
   }
-  100% {
-    opacity: 1;
+  header .nav-links {
+    display: none;
+    overflow-y: hidden;
+    animation-iteration-count: 1;
+    animation-duration: 0.8s;
   }
+  header .nav-links.active {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0085FF;
+    animation-name: openBurger;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+  }
+  header .nav-links.active a {
+    font-size: 24px;
+  }
+  header {
+    position: relative;
+  }
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  header .burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  footer {
+    display: none;
+  }
+  .main .block input[type=button] {
+    width: 100%;
+  }
+  .main .block .cover {
+    display: none;
+  }
+  .main .block:first-child {
+    display: contents;
+    width: 70%;
+  }
+  .main .block:first-child h1 {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .cards input[type=button] {
+    width: 60%;
+  }
+  .cards input[type=button]:hover {
+    width: 65%;
+  }
+  .cards .sort-card input[type=button] {
+    width: 30%;
+  }
+  .cards .sort-card input[type=button]:hover {
+    width: 60%;
+  }
+  .cards .sort-card input[type=button].btn.orange {
+    font-size: 10px;
+  }
+  .order .wrapper .btn-container .btn.orange {
+    width: 60%;
+  }
+  .order .card-payment p {
+    display: none;
+  }
+  .check-order .text-container:nth-child(5) p {
+    display: none;
+  }
+  .order .wrapper .payment-container .check-order {
+    width: 45%;
+  }
+  .order .wrapper .payment-container .payment {
+    width: 40%;
+  }
+  .order .wrapper .payment-container .payment .card-payment .paycard {
+    display: none;
+  }
+  .order .wrapper h2 {
+    font-size: 15px;
+  }
+  .product .wrapper .product-info .description {
+    display: none;
+  }
+  .product .wrapper .product-info .container-info2 {
+    display: none;
+  }
+  .product .wrapper .product-info .card .counter-container .counter {
+    width: 50%;
+  }
+  .product .wrapper .product-info .card .counter-container h3 {
+    font-size: 16px;
+  }
+  .product .wrapper .product-info .card .to-basket {
+    justify-content: unset;
+    width: 100%;
+  }
+  .product .wrapper .product-info .card .to-basket .btn {
+    width: 100%;
+  }
+  .product .wrapper .product-info .name h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .category .wrapper .container .category-card .cover h3 {
+    font-size: 10px;
+  }
+  .product .wrapper .product-info .options .size {
+    display: table;
+  }
+  .product .wrapper .product-info .options .color {
+    display: table;
+  }
+  .card .cover img {
+    object-fit: unset;
+  }
+  .basket .wrapper .table-basket .columns-name {
+    display: none;
+  }
+  .basket .wrapper .table-basket {
+    border: none;
+  }
+  .basket .wrapper .table-basket .products-container {
+    width: max-content;
+  }
+  .basket .wrapper .table-basket #second, .basket .wrapper .table-basket #third, .basket .wrapper .table-basket #forth {
+    width: auto;
+    margin: 0 auto;
+  }
+  element .style {
+    width: 420px;
+  }
+  .basket .wrapper .container .update {
+    display: none;
+  }
+  .basket .wrapper .container .clear {
+    display: none;
+  }
+  .check .wrapper .containerall {
+    width: 80%;
+  }
+  .check .button-basket a .btn.orange {
+    width: 65%;
+  }
+}
+@keyframes openBurger {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes closeBurger {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.fullpage {
+  display: none;
+}
+.fullpage.open {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

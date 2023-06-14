@@ -1,0 +1,46 @@
+.admin{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .panel-add{
+        width: 80%;
+        border: 2px solid $gray;
+        border-radius: 15px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            @include font(700);
+            font-size: 30px;
+        }
+        .container{
+            @extend %container;
+            margin-top: 20px;
+            p{
+                @include font(400);
+            }
+            .btn{
+                width: 150px;
+                margin-left: 20px;
+            }
+        }
+        input[type=text]{
+            width: 20vw;
+            padding: 6px;
+            border: 1px solid $gray;
+            border-radius: 6px;
+            margin-right: 20px;
+        }
+        .links-container{
+            margin-top: 20px;
+            width: 100%;
+            h4{
+                @include font(700);
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -172,6 +172,7 @@ const navigation = (pageOpen) =>{
             }
         })
     })
+    burger(false)
     
 }
 
@@ -293,17 +294,42 @@ const setColor = (e) =>{
 }
 
 const modal = (open) =>{
-    let modal = document.getElementById('modalCat')
     if(open){
-        modal.classList.add('open')
-    }
-    else{
-        modal.classList.remove('open')
-    }
-   
+        let modal = `
+        <div class="modal" id="modalCat">
+        <div class="modal-container">
+        <div class="container">
+         <h2>Категория</h2>
+         <button onclick="modal(false)"> <h4>X</h4></button>
+      </div>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, voluptatem perspiciatis temporibus unde ipsam officiis culpa minima totam consequuntur autem voluptatum iure et officia fugiat numquam eligendi soluta aperiam quisquam.</p>
+      <div class="container">
+            <input type="button" value="Отменить" onclick="modal(false)" class="btn close">
+            <input type="button" value="Сохранить" class="btn close">
+        </div>
+    </div>
+    </div>`
+    document.body.innerHTML += modal
+}
+else{
+    let modal = document.getElementById('modalCat')
+    modal.remove()
+}  
 }
 
-        
+const burger = (open) =>{
+    let navlinks = document.querySelector('header .nav-links')
+    if(open){
+        navlinks.classList.add('active')
+    }
+    else{
+        navlinks.style.animationName = 'closeBurger'
+        setTimeout(()=>{
+            navlinks.classList.remove('active')
+            navlinks.style.animationName = 'openBurger'
+        },700)
+    }
+}      
 
 
 // let key = 'da'

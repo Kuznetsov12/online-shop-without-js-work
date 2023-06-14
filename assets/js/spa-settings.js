@@ -64,6 +64,19 @@ info.forEach(item =>{
     })
 })
 
+fetch('https://run.mocky.io/v3/b5ebb717-bb68-452c-abb3-19c45cebcb38') 
+.then(response =>{   
+    return response.json()
+
+}).then(data =>{
+    links.push(...data)
+    let linksContainerTwo = document.querySelector('.nav-links')
+    links.forEach(item =>{
+        console.log(item.src)
+        let linkTwo = `<a href="#" onclick="navigation('${item.src}')">${item.title}</a>`
+        linksContainerTwo.innerHTML += linkTwo
+    })
+})
 
 
 

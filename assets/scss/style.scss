@@ -295,66 +295,15 @@ h3{
 @import 'basket';
 @import 'order';
 @import 'forms';
+@import 'modal';
+@import 'admin';
+@import 'adaptive'; 
 
-   
 .fullpage{
     display: none;
     &.open{
+
         display: block;
-    }
-}
-
-
-.modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 150;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.4);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    &.open{
-        display: flex;
-        animation-name: openModal;
-        animation-duration: 0.5s;
-        animation-iteration-count: 1;
-        animation-direction: normal ;
-    }
-    &-container{
-        width: 30%;
-        background-color: $white;
-        padding: 20px;
-        border-radius: 10px;
-        .container{
-            @extend %container;
-        }
-        h2{
-            @include font(700);
-            font-size: 24px;
-        }
-        h4{
-            @include font(700);
-            font-size: 18px;
-        }
-        p{
-            @include font(400);
-            text-align: justify;
-            font-size: 14px;
-            margin: 16px 0;
-        }
-        
-    }
-}
-
-@keyframes openModal {
-    0%{
-        opacity: 0.2;
-    }
-    100%{
-        opacity: 1;
     }
 }
 

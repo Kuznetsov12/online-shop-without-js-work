@@ -1,0 +1,46 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-container{
+        width: 30%;
+        background-color: $white;
+        padding: 20px;
+        border-radius: 10px;
+        .container{
+            @extend %container;
+        }
+        button{
+            @include font(700);
+            font-size: 20px;
+            color: $black;
+            transition: 0.6s;
+            &:hover{
+                color: $orange;
+                cursor: pointer;
+            }
+        }
+        h2{
+            @include font(700);
+            font-size: 30px;
+        }
+        h4{
+            @include font(700);
+            font-size: 18px;
+        }
+        p{
+            @include font(400);
+            text-align: justify;
+            font-size: 16px;
+            margin: 30px 0;
+        }
+        
+    }
+}

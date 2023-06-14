@@ -1,0 +1,187 @@
+@media screen and (max-width: 900px) {
+    .wrapper{
+        padding: 0 16px;
+    }
+    header .nav-links{
+        display: none;
+        overflow-y: hidden;
+        animation-iteration-count: 1;
+        animation-duration: 0.8s;
+        &.active{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            background-color: $blue;
+            animation-name: openBurger;
+            animation-iteration-count: 1;
+            animation-duration: 0.5s;
+            a{
+                font-size: 24px;
+            }
+        }
+    }
+    header{
+        position: relative;
+    }
+    .logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    header .burger-menu{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    footer {
+        display: none;
+    }
+    .main .block input[type = button]{
+       width: 100%;
+    }
+    .main .block .cover{
+        display: none;
+    }
+    .main .block:first-child{
+        display: contents;
+        width: 70%;
+        h1{
+            font-size: 20px;
+            margin-right: 20px;
+        }
+    }
+    .cards input[type = button]{
+        width: 60%;
+        &:hover{
+            width: 65%;
+        }
+    }
+
+    .cards .sort-card input[type = button]{
+        width: 30%;
+        &:hover{
+            width: 60%;
+        }
+        &.btn.orange{
+            font-size: 10px;
+        }
+    }
+    .order .wrapper .btn-container .btn.orange{
+        width: 60%;
+    }
+    .order .card-payment p{
+        display: none;
+    }
+    .check-order .text-container:nth-child(5) p{
+        display: none;
+    }
+    .order .wrapper .payment-container .check-order{
+        width: 45%;
+    }
+    .order .wrapper .payment-container .payment{
+        width: 40%;
+    }
+    .order .wrapper .payment-container .payment .card-payment .paycard{
+        display: none;
+    }
+    .order .wrapper h2{
+        font-size: 15px
+    }
+    .product .wrapper .product-info .description{
+        display: none;
+    }
+    .product .wrapper .product-info .container-info2{
+        display: none;
+    }
+    .product .wrapper .product-info .card .counter-container .counter{
+        width: 50%;
+    }
+    .product .wrapper .product-info .card .counter-container h3{
+        font-size: 16px;
+    }
+    .product .wrapper .product-info .card .to-basket{
+        justify-content: unset;
+        width: 100%;
+        .btn{
+            width: 100%;
+        } 
+    }
+    .product .wrapper .product-info .name h1{
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    .category .wrapper .container .category-card .cover h3{
+        font-size: 10px;
+    }
+    .product .wrapper .product-info .options .size{
+        display: table ;
+    }
+    .product .wrapper .product-info .options .color {
+        display: table;
+    }
+    .card .cover img{
+        object-fit: unset;
+    }
+    .basket .wrapper .table-basket .columns-name{
+        display: none;
+    }
+    .basket .wrapper .table-basket{
+        border: none;
+    }
+    .basket .wrapper .table-basket .products-container{
+        width: max-content;
+    }
+    .basket .wrapper .table-basket #second, .basket .wrapper .table-basket #third, .basket .wrapper .table-basket #forth{
+        width: auto;
+        margin: 0 auto;
+    }
+    element .style{
+        width: 420px;
+    }
+    .basket .wrapper .container .update{
+        display: none;
+    }
+    .basket .wrapper .container .clear{
+        display: none;
+    }
+    .check .wrapper .containerall{
+        width: 80%;
+    }
+    .check .button-basket a .btn.orange{
+        width: 65%;
+    }
+}
+
+
+
+
+@keyframes openBurger{
+    from {
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes closeBurger{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+
+}

@@ -1,6 +1,15 @@
 header{
     @extend %container;
     padding: 30px 0;
+
+    .burger-menu{
+        display: none;
+        .line{
+            width: 20px;
+            height: 2px;
+            background-color: $black;
+        }
+    }
     .logo{
         cursor: pointer;
         display: flex;

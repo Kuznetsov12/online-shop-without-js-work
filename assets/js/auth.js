@@ -1,5 +1,11 @@
 let users = [
     {
+        id:0,
+        login: 'admin',
+        password: 'admin',
+        phone: '7'
+    },
+    {
         id:1,
         login: 'Zhenek',
         phone: '777',
@@ -21,7 +27,10 @@ const login =  () =>{
     let phone = maskedAuthPhone.unmaskedValue
     users.forEach(user =>{
         console.log(user)
-        if(user.password === password.value && user.phone == phone && user.login === email.value){
+        if(user.password === 'admin' && user.phone == '7' && user.login === 'admin'){
+            window.location = './assets/admin/admin.html'
+        }
+        else if(user.password === password.value && user.phone == phone && user.login === email.value){
             window.location = 'app.html'
         }
     })
